@@ -1,6 +1,6 @@
 import sklearn as sk
 import tensorflow as tf
-
+import pandas as pd
 
 
 
@@ -22,20 +22,33 @@ class Response_Get():
 
 
 class Response_Tailor():
-    def encoder(text,model):
-        # encodes the text to produces a response
-        encoded =5
-        return encoded
-    def decoder(encodedText):
-        # returns the decoded response
-        decoded = 5
-        return decoded
     
-    def modelGen(dataset):
+    def modelGen(dataset,questionGiver, questionAnswer):
         model = "my model"
         return model
     
     
     def modelSave(model):
         print("model")
+    
+class Encoder():
+    def hello():
+        return 0
+
+class Decoder():
+    def hello():
+        return 0
+
+def Clean(dataset):
+    dataset['Utterance'] = dataset['Utterance'].str.replace(r'\"','')
+    return dataset.dropna()
+
+    
+dataset = pd.read_csv('Johnny Depp.csv')
+print(dataset)
+dataset = Clean(dataset)
+print (dataset)
+
+
+
     
